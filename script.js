@@ -66,3 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 });
+
+// Form Handling
+function handleFormSubmit() {
+    const name = document.getElementById('contact-name').value;
+    const email = document.getElementById('contact-email').value;
+    const message = document.getElementById('contact-message').value;
+
+    document.getElementById('hidden-name').value = name;
+    // Combine Email and Message since the form doesn't have a dedicated email field
+    document.getElementById('hidden-message').value = `From: ${email}\n\nMessage: ${message}`;
+}
