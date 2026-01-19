@@ -77,3 +77,36 @@ function handleFormSubmit() {
     // Combine Email and Message since the form doesn't have a dedicated email field
     document.getElementById('hidden-message').value = `From: ${email}\n\nMessage: ${message}`;
 }
+
+// Modal Handling
+function showThankYouModal() {
+    const modal = document.getElementById('thankYouModal');
+    modal.classList.add('show');
+    document.querySelector('.simple-form').reset();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Other existing code...
+
+    const modal = document.getElementById('thankYouModal');
+    const closeBtn = document.querySelector('.close-modal');
+    const closeBtnBtn = document.querySelector('.close-modal-btn');
+
+    if (closeBtn) {
+        closeBtn.onclick = function () {
+            modal.classList.remove('show');
+        }
+    }
+
+    if (closeBtnBtn) {
+        closeBtnBtn.onclick = function () {
+            modal.classList.remove('show');
+        }
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.classList.remove('show');
+        }
+    }
+});
