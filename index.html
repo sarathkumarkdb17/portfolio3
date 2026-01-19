@@ -232,7 +232,7 @@
                         Message sent successfully!
                     </div>
                     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-                        onload="if(submitted) {document.getElementById('form-message-success').style.display='block'; document.querySelector('.simple-form').reset();}"></iframe>
+                        onload="if(submitted) { showThankYouModal(); }"></iframe>
                     <form class="simple-form"
                         action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf0KPomCC4WUNdRbjpex-cdwwRfXUBUzDqq2geHIbK0MWRcvA/formResponse"
                         method="POST" target="hidden_iframe" onsubmit="submitted=true; handleFormSubmit()">
